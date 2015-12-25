@@ -3,48 +3,7 @@
 var libaudio = libaudio || {};
 
 libaudio.init = function() {
-  /*
-  self.enviro = flock.init();
-  self.enviro.start();*/
 }
-
-libaudio.FreqSound = function(maxVoices) {
-  var self = this;
-
-  self.fundamental = 50;
-  self.maxVoices = maxVoices;
-
-  self.polySynth = flock.synth.polyphonic({
-    synthDef: {
-      id: "carrier",
-      ugen: "flock.ugen.sin",
-      freq: self.fundamental,
-      mul: {
-        id: "env",
-        ugen: "flock.ugen.asr",
-      }
-    },
-    maxVoices: maxVoices,
-    initVoicesLazily: true,
-  });
-};
-
-libaudio.FreqSound.prototype.play = function(cell) {
-  var self = this;
-
-  var changes = {
-    "carrier.freq": cell.y * self.fundamental,
-  };
-
-  self.polySynth["noteOn"](cell.y, changes);
-};
-
-libaudio.FreqSound.prototype.stop = function(cell) {
-  var self = this;
-  self.polySynth["noteOff"](cell.y);
-};
-
-/* ----------------------------------------------------- */
 
 libaudio.FileSound = function(maxVoices) {
   var self = this;
