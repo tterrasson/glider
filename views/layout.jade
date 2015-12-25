@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel="stylesheet", href="/stylesheets/normalize.css")
+    link(rel="stylesheet", href="/stylesheets/foundation.min.css")
+    link(rel="stylesheet", href="/foundation-icons/foundation-icons.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="/javascripts/jquery-2.1.4.min.js")
+    script(src="/javascripts/createjs-2015.05.21.min.js")
+    script(src="/javascripts/modernizr.js")
+    script(src="/javascripts/fastclick.js")
+    script(src="/javascripts/foundation.min.js")
+    script(src="/javascripts/jquery.ba-throttle-debounce.min.js")
+  body
+    div(id="main")
+      div(id="wrapper")
+        block content
+
+    script.
+      $(document).foundation();

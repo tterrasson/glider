@@ -1,0 +1,41 @@
+html, body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #002b36;
+  color: #fff;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#wrapper {
+  margin-top: 10px;
+}
+
+#grid {
+  /*display: block;*/
+}
+
+/*
+#control button {
+  padding: 6px 16px 6px;
+}*/
+
+#pattern:hover {
+  cursor: cell;
+}
+
+.row-expand {
+  max-width: 100%;
+}
+
+.icon-large {
+  font-size: 20px;
+}
+
+.custom-btn {
+  padding: 6px;
+}

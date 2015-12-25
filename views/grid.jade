@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  link(rel="stylesheet" href="/stylesheets/grid.css")
+
+  div(class="row row-expand")
+
+    div(class="small-6 columns")
+      div(id="wrapper-grid-left")
+        canvas(id="grid-left")
+
+    div(class="small-6 columns")
+      div(id="wrapper-grid-right")
+        canvas(id="grid-right")
+
+  script(src="/socket.io/socket.io.js")
+  script(src="/javascripts/libaudio.js")
+  script(src="/javascripts/libgrid.js")
+  script(src="/javascripts/grid.js")

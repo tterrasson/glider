@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  link(rel="stylesheet" href="/stylesheets/control.css")
+
+  div(class="row row-expand")
+    div(class="small-6 columns")
+        div(id="wrapper-pattern-left")
+          canvas(id="pattern-left")
+
+    div(class="small-6 columns")
+        div(id="wrapper-pattern-right")
+          canvas(id="pattern-right")
+
+  div(class="row row-expand")
+    div(class="small-6 columns")
+      div(class="row")
+        div(class="small-6 columns")
+          label
+            select(id="sound-select-left")
+              each item in soundList
+                option(value=item.id)= item.name
+
+        div(class="small-6 columns")
+          div(id="speed-slider-left" class="range-slider" data-slider data-options="start: 500;end: 100")
+            span(class="range-slider-handle" role="slider" tabindex="0")
+            span(class="range-sider-active-segment")
+            input(type="hidden")
+
+    div(class="small-6 columns")
+      div(class="row")
+        div(class="small-6 columns")
+          div(id="speed-slider-right" class="range-slider" data-slider data-options="start: 500;end: 100")
+            span(class="range-slider-handle" role="slider" tabindex="0")
+            span(class="range-sider-active-segment")
+            input(type="hidden")
+
+        div(class="small-6 columns")
+          label
+            select(id="sound-select-right")
+              each item in soundList
+                option(value=item.id)= item.name
+
+  div(class="row row-expand")
+    div(class="small-2 columns")
+      button(id="stop-btn-left" class="custom-btn expand")
+        i(class="fi-trash icon-large")
+    div(class="small-2 columns")
+      button(id="play-btn-left" class="custom-btn expand success")
+        i(class="fi-play icon-large")
+
+    div(class="small-4 columns")
+      div(id="volume-slider" class="range-slider" data-slider data-options="start: 100;end: 0")
+        span(class="range-slider-handle" role="slider" tabindex="0")
+        span(class="range-sider-active-segment")
+        input(type="hidden")
+
+    div(class="small-2 columns")
+      button(id="play-btn-right" class="custom-btn expand success")
+        i(class="fi-play icon-large")
+    div(class="small-2 columns")
+      button(id="stop-btn-right" class="custom-btn expand")
+        i(class="fi-trash icon-large")
+
+  div(id="save-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog")
+    h5(class="modal-title") Veuillez préciser un nom
+    p(class="lead")
+      form(id="")
+        div(class="row")
+          div(class="small-10 columns")
+            input(type="text" placeholder="Nom...")
+          div(class="small-2 columns")
+            button(type="submit" class="success") Valider
+
+    a(class="close-reveal-modal" aria-label="Close") &#215;
+
+  script(src="/socket.io/socket.io.js")
+  script(src="/javascripts/libaudio.js")
+  script(src="/javascripts/libgrid.js")
+  script(src="/javascripts/control.js")
