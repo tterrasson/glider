@@ -2,6 +2,10 @@
   "name": "glider",
   "version": "0.0.1",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tterrasson/glider"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
