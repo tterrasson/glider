@@ -6,11 +6,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.15.1",
     "debug": "^2.2.0",
     "express": "^4.13.4",
-    "jade": "^1.11.0",
     "morgan": "^1.7.0",
-    "socket.io": "^1.4.5"
+    "pug": "^2.0.0-alpha8",
+    "socket.io": "^1.4.6"
   }
 }
