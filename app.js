@@ -57,7 +57,7 @@ var server = app.listen(app.get("port"), function() {
   console.log("Listening on " + server.address().port);
 });
 
-var io = require("socket.io").listen(server);
+var io = require("socket.io")(server);
 var namespace = "main";
 
 soundList = soundfile.loadSync(path.join("public", "sounds"));
